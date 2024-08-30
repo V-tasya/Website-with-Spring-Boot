@@ -20,11 +20,10 @@ public class Post {
     public Post() {
     }
 
-    public Post(String title, String anons, String fullText, int views) {
+    public Post(String title, String anons, String fullText) {
         this.title = title;
         this.anons = anons;
         this.fullText = fullText;
-        this.views = views;
     }
 
     public Long getId() {

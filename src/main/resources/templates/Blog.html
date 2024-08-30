@@ -9,15 +9,15 @@
 <header th:insert="bloks/header :: header"></header>
 <div class="container mt-5">
     <h1>Blog</h1>
-    <!-- Здесь мы создаем цикл для отображения записей
-    Проходим по всем постам, которые пришли из базы данных
-    и выводим заголовок записи, анонс записи
-    и у нас есть ссылка на подробную информацию
+    <!-- Here we create a loop to display the posts
+    Go through all the posts that came from the database
+    and display the title of the post, the announcement of the post.
+    and we have a link to detailed information
     -->
     <div th:each="el : ${posts}" class="alert alert-info mt-2">
         <h2 th:text="${el.title}"></h2>
         <p th:text="${el.anons}"></p>
-        <a th:href="@{/blog/{id}(id=${el.id})}">Detailed</a>
+        <a th:href="@{/blog/{id}(id=${el.id})}" class="btn btn-warning">Detailed</a>
     </div>
 </div>
 </body>
