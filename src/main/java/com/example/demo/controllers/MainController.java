@@ -16,7 +16,7 @@ public class MainController {
         return "home"; // when we will go for a main page the template home will be opened
     }
 
-    @GetMapping("about-me")
+    @GetMapping("aboutMe")
     public String aboutMe(Model model) {
         return "aboutMe";
     }

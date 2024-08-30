@@ -17,7 +17,7 @@
     <div th:each="el : ${posts}" class="alert alert-info mt-2">
         <h2 th:text="${el.title}"></h2>
         <p th:text="${el.anons}"></p>
-        <a th:href="@{/blog/{id}(id=${el.id})}" class="btn btn-warning">Detailed</a>
+        <a th:href="@{/blog/{id}(id=${el.id})}" class="btn btn-success mt-2">Detailed</a>
     </div>
 </div>
 </body>
