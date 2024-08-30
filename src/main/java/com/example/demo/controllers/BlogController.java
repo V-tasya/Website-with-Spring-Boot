@@ -84,4 +84,26 @@ public class BlogController {
         model.addAttribute("post", post.get());
         return "Edit";
     }
+
+    @PostMapping("/blog/{id}/Edit")
+    public String updatePost(@PathVariable(value = "id") long id,
+                         @RequestParam String title,
+                          @RequestParam String anons,
+                          @RequestParam String fullText,
+                          Model model) {
+        Post post = postRepository.findById(id).orElseThrow(); //orElseThrow() throwing exception if the article wasn't found
+        post.setTitle(title);
+        post.setAnons(anons);
+        post.setFullText(fullText);
+        postRepository.save(post);
+        return "redirect:/Blog";
+    }
+
+    @PostMapping("/blog/{id}/Delete")
+    public String deletePost(@PathVariable(value = "id") long id,
+                         Model model) {
+        Post post = postRepository.findById(id).orElseThrow(); //orElseThrow() throwing exception if the article wasn't found
+        postRepository.delete(post);
+        return "redirect:/Blog";
+    }
 }
